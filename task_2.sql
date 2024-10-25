@@ -23,6 +23,7 @@ CREATE TABLE IF NOT EXISTS customers (
     customer_name VARCHAR(215) NOT NULL,
     email VARCHAR(215) NOT NULL UNIQUE,
     address TEXT NOT NULL
+    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)"]
 );
 
 -- Create Orders table
