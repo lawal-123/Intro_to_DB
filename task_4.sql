@@ -1,3 +1,7 @@
+-- This script prints the full description of the 'books' table in the current database
+-- by querying the INFORMATION_SCHEMA.COLUMNS table.
+-- The database is assumed to be the one passed as an argument to the mysql command.
+
 SELECT
     COLUMN_NAME,
     COLUMN_TYPE,
@@ -8,4 +12,6 @@ SELECT
 FROM
     INFORMATION_SCHEMA.COLUMNS
 WHERE
-    TABLE_SCHEMA = 'alx_book_store' AND TABLE_NAME = 'books';
+    TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'Books'
+ORDER BY
+    ORDINAL_POSITION;
